@@ -1,0 +1,66 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DestinationController!{% endblock %}
+
+{% block body %}
+    <div class="d-flex " style="margin-left: 30%;" >
+
+    <div class="d-flex flex-column mt-5 ">
+    <h3 class="d-flex">Destinations populaires</h3>
+        <p>Nous parions que vous avez déjà repéré certaines de ces destinations.<br>Vous avez du flair. Tout le monde les adore !  </p>
+
+        <div class="card mb-3 mt-5" style="max-width: 800px; border: none">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img style="width: 1000px" src="{{ asset('uploads/photos/' ~ destination1.photo) }}" class="img-fluid " alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">1 - {{ destination1.nom }}</h5>
+                        <p class="card-text">{{ destination1.description }}</p>
+                        <a href="{{ path('destination', { id: destination1.id }) }}" class="card-text"><small class="text-muted">Voir plus</small></a>
+                        <a href="{{ path('destination_visit', { id: destination1.id }) }}" class="card- m-lg-3"><small class="text-muted">J'ai visité !</small></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 800px; border: none">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img style="width: 1000px" src="{{ asset('uploads/photos/' ~ destination2.photo) }}" class="img-fluid " alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">2 - {{ destination2.nom }}</h5>
+                        <p class="card-text">{{ destination2.description }}</p>
+
+                        <a href="{{ path('destination', { id: destination2.id }) }}" class="card-text"><small class="text-muted">Voir plus</small></a>
+                        <a  href="{{ path('destination_visit', { id: destination2.id }) }}" class="card-text m-lg-3"><small class="text-muted">J'ai visité !</small></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 800px; border: none">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img style="width: 1000px" src="{{ asset('uploads/photos/' ~ destination3.photo) }}" class="img-fluid " alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">3 - {{ destination3.nom }}</h5>
+                        <p class="card-text">{{ destination3.description }}</p>
+                        <a href="{{ path('destination', { id: destination3.id }) }}" class="card-text"><small class="text-muted">Voir plus</small></a>
+                        <a href="{{ path('destination_visit', { id: destination3.id }) }}" class="card-text m-lg-3"><small class="text-muted">J'ai visité !</small></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+{% endblock %}

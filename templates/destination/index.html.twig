@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DestinationController!{% endblock %}
+
+{% block body %}
+<style>
+    /*.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }*/
+    /*.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }*/
+</style>
+
+<div class="example-wrapper d-flex flex-column" style="margin-left: 30%">
+    <h3 class="mt-5 mb-5">Choisissez votre destination de voyage</h3>
+    {% for destination in destinations %}
+
+        <div class="card mb-3 d-flex" style="max-width: 800px; border: none">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img style="width: 1000px" src="{{ asset('uploads/photos/' ~ destination.photo) }}" class="img-fluid " alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ destination.nom }}</h5>
+                        <p class="card-text">{{ destination.description }}</p>
+                        <a href="{{ path('destination', { id: destination.id }) }}" class="card-text"><small class="text-muted">Voir plus</small></a>
+                        <a href="{{ path('destination_visit', { id: destination.id }) }}" class="card-text m-lg-3"><small class="text-muted">J'ai visité !</small></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{#            </div>#}
+{#        </div>#}
+
+
+
+
+    {% endfor %}
+
+
+</div>
+{% endblock %}
